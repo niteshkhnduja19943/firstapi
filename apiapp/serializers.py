@@ -15,12 +15,19 @@ class TestTableSerializers(serializers.ModelSerializer):
 
 
 
+
 class Delete(serializers.Serializer):
     id = serializers.IntegerField(required=True)
 
 
-class forgot_id(serializers.Serializer):
-        id = serializers.IntegerField(required=True)
+class forgot_password(serializers.Serializer):
+    class Meta:
+        from .models import TestTable
+
+        model = TestTable
+        required = ('username')
+        passw = ('password')
+
 
 
 
